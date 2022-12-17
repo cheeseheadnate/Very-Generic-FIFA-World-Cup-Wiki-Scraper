@@ -4,7 +4,7 @@ import pandas as pd
 
 # Based on Wikipedia for educational purposes
 
-years = [1930, 1934, 1938, 1950, 1954, 1958, 1962, 1966, 1970, 1974, 1978, 1982, 1986, 1990, 1994, 1998, 2002, 2006, 2010, 2014, 2018]
+years = [1930, 1934, 1938, 1950, 1954, 1958, 1962, 1966, 1970, 1974, 1978, 1982, 1986, 1990, 1994, 1998, 2002, 2006, 2010, 2014, 2018, 2022]
 
 def get_matches(year):
    web = f'https://en.wikipedia.org/wiki/{year}_FIFA_World_Cup'
@@ -29,5 +29,12 @@ def get_matches(year):
    footballDF['year'] = year
    return footballDF
 
-# Enter year here
-print(get_matches('1950'))
+
+# Historical Data
+fifa = [get_matches(year) for year in years]
+fifaDF = pd.concat(fifa, ignore_index=True)
+fifaDF.to_csv('fifa_worldcup_historical_data.csv', index=False)
+
+# Fixture
+fixtureDF = get_matches(2022)
+fixtureDF.to_csv('fifa_worldcup_fixture.csv', index=False)
