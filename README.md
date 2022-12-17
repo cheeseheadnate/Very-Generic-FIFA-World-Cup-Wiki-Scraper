@@ -12,6 +12,8 @@ This is a very simple python scraper for educational purposes. The Author does n
 
 This scraper is not affiliated with any websites, it is solely made for illustrative and educational purposes.
 
+It outputs the results to 'csv' files in the working directory.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
