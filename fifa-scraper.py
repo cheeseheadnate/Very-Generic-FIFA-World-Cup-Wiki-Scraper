@@ -35,6 +35,10 @@ fifa = [get_matches(year) for year in years]
 fifaDF = pd.concat(fifa, ignore_index=True)
 fifaDF.to_csv('fifa_worldcup_historical_data.csv', index=False)
 
+
 # Fixture
-fixtureDF = get_matches(2022)
+fixtureDF = get_matches('1938')
 fixtureDF.to_csv('fifa_worldcup_fixture.csv', index=False)
+
+# Output for testing
+print(fixtureDF)
